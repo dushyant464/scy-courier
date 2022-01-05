@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=<div class="modal fade in" id="trackModalForm" role="dialog" tabindex="-1" style="display: block; padding-right: 17px;">
+       <title>Document</title>
+</head>
+<body>
+    
+</body> <div class="modal-dialog"><div class="custom-modal"> 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">TRACK ORDER</h4>
+                    <img src="https://www.delhivery.com/assets/images/track.png" alt="contact-form" class="has-retina contact-form-img">
+                </div>
+                <div class="tracking-form white-bg radius clearfix"> 
+                    <form class="trackmodalform clearfix" method="post" action="">
+                        <div class="col-sm-12 nopadding">
+                            <div class="form-check-inline">
+                                 <label class="customradio" onclick="sendGaEvent('fab_trackform', 'trackingdetail_loginwithmobile_click', 'track_order');">
+                                    <span class="radiotextsty">Mobile Number</span> 
+                                    <input type="radio" checked="checked" name="radio" class="trackradio trackRadioPhone" value="phonenumber"> 
+                                    <span class="checkmark">
+
+                                    </span>
+                                 </label>
+                                  <label class="customradio" onclick="sendGaEvent('fab_trackform', 'radio_btn_awb', 'track_order');">
+                                    <span class="radiotextsty">Tracking ID</span> 
+                                    <input type="radio" name="radio" class="trackradio trackRadioAWB" value="waybillId"> 
+                                    <span class="checkmark"></span>
+                                 </label>
+                                  <label class="customradio checked" onclick="sendGaEvent('fab_trackform', 'radio_btn_orderid', 'track_order');">
+                                    <span class="radiotextsty">Order ID / Ref ID</span> 
+                                    <input type="radio" name="radio" class="trackradio trackRadioOrder" value="orderId"> 
+                                    <span class="checkmark"></span> 
+                                </label> 
+                                <label class="customradio" onclick="sendGaEvent('fab_trackform', 'radio_btn_lrn', 'track_order');">
+                                    <span class="radiotextsty">LTL Shipment (LRN)</span>
+                                     <input type="radio" name="radio" class="trackradio trackRadioLRN" value="lrnumber"> 
+                                     <span class="checkmark"></span> </label></div><div class="clear">
+
+                                     </div>
+                                     <div class="hometracking-container clearfix">
+                                         <div class="col-sm-12 nopadding">
+                                             <div class="trackmodalform-hintfix" style="display: none;"> 
+                                                <span class="msg red-color trackmodalform-hintfixError">Please enter a valid Order ID</span>
+                                            </div>
+                                            <div class="form-group">
+                                                 <input type="text" class="form-control tracktext" onkeypress="return AvoidSpace(event)" id="tracking-id" placeholder="Order ID / Ref ID" name="tracking-id" onclick="sendGaEvent('fab_trackform', 'awb_orderid_input', 'track_order');">
+                                                </div>
+                                                <!-- <span class="msg">* Track multiple orders separated by “space”</span> -->
+                                            </div>
+                                        </div>
+                                        <div class="hometracking-container clearfix">
+                                            <div class="col-sm-12 nopadding">
+                                                 <!--<div class="trackmodalform-otp-hintfix"> <span class="msg red-color trackmodalform-otp-hintfixError">Enter Valid OTP</span></div>-->
+                                                 <div>
+                                                     <div class="col-sm-6 push-left enter-otp" style="display: none;">Enter OTP</div>
+                                                     <div id="otpFormResendButton" class="col-sm-6 push-right resend-otp" style="display: none;">Resend OTP</div>
+                                                     <div id="waitingResend" style="text-align: right; font-size: 12px; padding-right: 0px; float: right; display: none;" class="col-sm-6 push-right">
+                                                    </div>
+                                                </div>
+                                                    <div class="form-group">
+                                                         <input type="text" class="form-control otptext" onkeypress="return AvoidSpace(event)" id="trackModalOTP-id" placeholder="Enter OTP " name="trackModalOTP-id" onclick="sendGaEvent('fab_trackform', 'OTP_Popup_otpentered', 'track_order');" style="display: none;">
+                                                        </div>
+                                                        <div class="trackmodalform-otp-hintfix" style="display: none;">
+                                                             <span class="msg red-color trackmodalform-otp-hintfixError">
+
+                                                             </span></div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Captcha -->
+                                                        <div style="display: none; " class="captcha-container">
+                                                            <div class="col-xs-6 col-md-4 col-lg-5 nopadding">
+                                                                <div class="form-group"> 
+                                                                    <img class="captcha-image" style="max-width:100%" alt="Captcha">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 col-md-5 col-lg-6">
+                                                                <div class="form-group margin-bottom-0">
+                                                                    <input type="text" class="form-control captcha-text" id="trackmodal-captcha-text" placeholder="Enter Text">
+                                                                </div>
+                                                                <p>
+                                                                    <span class="text-button refresh-captcha-button">REFRESH</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6 nopadding-lft">
+                                                            <a href="#" data-toggle="modal" data-target="#trackModalForm" class="cmn-btn uppercase black-btn radius white-bg dismiss" id="closeModal">Dismiss</a>
+                                                        </div>
+                                                        <div class="col-xs-6 nopadding-rht">
+                                                             <button id="trackModalButton" type="submit" class="uppercase default-btn cmn-btn radius" onclick="sendGaEvent('fab_trackform', 'awb_orderid_button', 'track_order');" style="display: block;">
+                                                                <div id="loader_div" class="loader_div">
+
+                                                                </div>Track </button> 
+                                                                <button id="trackModalGetOTP" type="submit" class="uppercase default-btn cmn-btn radius" onclick="sendGaEvent('fab_trackform', 'awb_send_otp_button', 'track_order');" style="display: none;">
+                                                                    <div id="loader_div" class="loader_div">
+
+                                                                    </div>Get OTP &amp; Track </button> 
+                                                                    <button id="trackModalSubmitOTP" type="button" class="uppercase default-btn cmn-btn radius trackModalSubmitOTP" onclick="sendGaEvent('fab_trackform', 'awb_submit_otp_button', 'track_order');" style="display: none;">
+                                                                        <div id="loader_div" class="loader_div">
+
+                                                                        </div>Submit &amp; Track </button>
+    </div></div>
+</form></div>
+</div></div>
+</div></div>, initial-scale=1.0">
+    
+<body>
+    
+</body>
+</html>
